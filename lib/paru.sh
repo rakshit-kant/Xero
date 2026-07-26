@@ -17,7 +17,7 @@ install_paru() {
         return 0
     fi
 
-    log_info "paru was not found. Bootstrapping 'paru-bin' from AUR..."
+    log_info "paru was not found. Bootstrapping 'paru' from AUR..."
 
     require_command makepkg
 
@@ -27,21 +27,21 @@ install_paru() {
     rm -rf "$build_dir"
     mkdir -p "$build_dir"
 
-    log_info "Cloning paru-bin repository..."
-    if ! git clone "https://aur.archlinux.org/paru-bin.git" "$build_dir"; then
-        log_error "Failed to clone paru-bin from the AUR repository."
+    log_info "Cloning paru repository..."
+    if ! git clone "https://aur.archlinux.org/paru.git" "$build_dir"; then
+        log_error "Failed to clone paru from the AUR repository."
         rm -rf "$build_dir"
         exit 1
     fi
 
-    log_info "Building and installing paru-bin..."
-    
+    log_info "Building and installing paru..."
+
     # Execute makepkg inside a subshell to avoid changing the current working directory of the main process.
     # -s: Install missing dependencies via pacman.
     # -i: Install the package built by makepkg.
     # --noconfirm: Skip confirmation prompts.
     if ! (cd "$build_dir" && makepkg -si --noconfirm); then
-        log_error "Failed to build and install paru-bin."
+        log_error "Failed to build and install paru."
         rm -rf "$build_dir"
         exit 1
     fi

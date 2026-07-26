@@ -10,6 +10,13 @@ AUR_LOADED=1
 # aur.sh - Library for installing packages from the Arch User Repository (AUR) using Paru.
 
 install_aur_packages() {
+
+    if ! paru --version >/dev/null 2>&1; then
+        log_error "paru is broken. Reinstalling..."
+        sudo pacman -Rns --noconfirm paru paru-bin || true
+        install_paru
+    fi
+
     log_info "Installing AUR packages..."
 
     # Verify that paru is available
