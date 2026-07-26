@@ -2,6 +2,12 @@
 local vars = require("variables")
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
+exec-once = waybar
+exec-once = swaync
+exec-once = hyprpaper
+exec-once = hypridle
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once = wl-paste --watch cliphist store
 -- Uncomment and modify to use:
 -- hl.on("hyprland.start", function () 
 --   hl.exec_cmd(vars.terminal)
