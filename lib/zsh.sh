@@ -43,7 +43,7 @@ backup_zsh_configs() {
 clone_zsh_dotfiles() {
     log_info "Cloning Zsh dotfiles..."
 
-    local repo="git@github.com:rakshit-kant/zsh.git"
+    local repo="https://github.com/rakshit-kant/zsh.git"
     local clone_dir="/tmp/zsh-dotfiles"
 
     rm -rf "$clone_dir"
