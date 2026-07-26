@@ -10,7 +10,7 @@ NVIM_LOADED=1
 install_nvim_config() {
     log_info "Installing Neovim configuration..."
 
-    local repo="git@github.com:rakshit-kant/nvim.git"
+    local repo="https://github.com/rakshit-kant/nvim.git"
     local temp_dir="/tmp/nvim-config"
     local target="$HOME/.config/nvim"
     local backup="$HOME/.config_backup/nvim"
