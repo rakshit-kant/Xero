@@ -10,23 +10,6 @@ CHECKS_LOADED=1
 # checks.sh - Environment and pre-requisite checks.
 # Ensures the installer runs under the correct conditions (Arch Linux, non-root, internet active).
 
-start_sudo_keepalive() {
-    (
-        while true; do
-            sleep 60
-            sudo -v
-        done
-    ) &
-
-    SUDO_KEEPALIVE_PID=$!
-}
-
-cleanup_sudo_keepalive() {
-    if [[ -n "${SUDO_KEEPALIVE_PID}" ]]; then
-        kill "$SUDO_KEEPALIVE_PID" 2>/dev/null || true
-    fi
-}
-
 check_arch() {
     log_info "Verifying OS compatibility..."
     if [[ -f /etc/os-release ]]; then
@@ -66,10 +49,7 @@ check_root() {
         exit 1
     fi
 
-    # Refresh sudo timestamp until installer exits.
-    start_sudo_keepalive
-
-    log_success "Sudo access verified and cached."
+    log_success "Sudo access verified."
 }
 
 check_internet() {

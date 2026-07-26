@@ -52,9 +52,6 @@ load_libraries() {
 }
 
 main() {
-    # Ensure background processes are cleaned up on exit
-    trap cleanup_sudo_keepalive EXIT
-
     log "Loading installer libraries"
     load_libraries
 

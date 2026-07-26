@@ -17,14 +17,14 @@ enable_system_services() {
 
     for service in "${services[@]}"; do
         log_info "Enabling and starting system service: $service"
-        
-        # systemctl enable --now enables the service to start on boot and starts it immediately.
+
+        # systemctl enable enables the service to start on Reboot.
         # This requires administrative privileges (sudo).
-        if ! sudo systemctl enable --now "$service"; then
-            log_error "Failed to enable and start system service: $service"
+        if ! sudo systemctl enable "$service"; then
+            log_error "Failed to enable system service: $service"
             exit 1
         fi
     done
 
-    log_success "All system-level services have been enabled and started successfully."
+    log_success "All system-level services have been enabled."
 }
