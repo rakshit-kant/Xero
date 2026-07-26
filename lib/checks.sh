@@ -14,10 +14,10 @@ SUDO_KEEPALIVE_PID=""
 
 start_sudo_keepalive() {
     while true; do
-        sudo -n true
+        sudo -v
         sleep 60
     done &
-    
+
     SUDO_KEEPALIVE_PID=$!
 }
 
@@ -45,7 +45,7 @@ check_arch() {
 
 check_root() {
     log_info "Checking user privileges..."
-    
+
     # Building packages (especially with makepkg/paru) as root is dangerous and forbidden.
     if [[ "$EUID" -eq 0 ]]; then
         log_error "This script should NOT be run as root directly."
@@ -65,22 +65,22 @@ check_root() {
         log_error "Sudo authorization failed."
         exit 1
     fi
-    
+
     # Keep sudo alive in the background while the installer runs
     start_sudo_keepalive
-    
+
     log_success "Sudo access verified and cached."
 }
 
 check_internet() {
     log_info "Checking internet connectivity..."
-    
+
     # Try a fast ping to Cloudflare DNS with a 3-second timeout
     if ping -c 1 -W 3 1.1.1.1 >/dev/null 2>&1; then
         log_success "Internet connection detected."
         return 0
     fi
-    
+
     # Fallback to an HTTP request to archlinux.org in case ping is blocked on the network
     if command_exists curl && curl -s --connect-timeout 3 https://www.archlinux.org >/dev/null; then
         log_success "Internet connection detected (via HTTP fallback)."
@@ -93,7 +93,7 @@ check_internet() {
 
 check_dependencies() {
     log_info "Checking pre-requisite installer dependencies..."
-    
+
     # We only strictly require 'sudo' to begin the installation process.
     # Other tools like 'git', 'curl', and 'ping' (iputils) will be installed
     # during the 'install_official_packages' step if they are missing.

@@ -9,6 +9,9 @@ PARU_LOADED=1
 
 # paru.sh - Library for bootstrapping the Paru AUR helper.
 
+log_info "Refreshing sudo credentials before building paru..."
+sudo -v
+
 install_paru() {
     log_info "Checking for AUR helper 'paru'..."
 
