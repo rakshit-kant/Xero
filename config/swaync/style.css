@@ -1,0 +1,36 @@
+/* Oxocarbon Theme for SwayNC */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+.notification-row {
+    outline: none;
+    padding: 10px;
+}
+
+.notification {
+    background: #161616;
+    border: 1px solid #393939;
+    border-radius: 12px;
+    padding: 10px;
+    color: #f2f2f2;
+}
+
+.control-center {
+    background: #161616;
+    border: 1px solid #393939;
+    border-radius: 12px;
+    color: #f2f2f2;
+}
+
+.button {
+    background: #262626;
+    border: none;
+    border-radius: 8px;
+    color: #f2f2f2;
+}
+
+.button:hover {
+    background: #393939;
+}

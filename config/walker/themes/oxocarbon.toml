@@ -1,0 +1,13 @@
+[colors]
+background = "#161616"
+foreground = "#f2f4f8"
+
+selection = "#262626"
+
+accent = "#33b1ff"
+
+border = "#393939"
+
+[layout]
+radius = 12
+border_width = 2

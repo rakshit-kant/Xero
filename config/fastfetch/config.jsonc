@@ -1,0 +1,25 @@
+{
+    "logo": {
+        "type": "file",
+        "source": "xero.txt",
+        "color": {
+            "1": "blue",
+            "2": "cyan"
+        }
+    },
+    "modules": [
+        "title",
+        "separator",
+        "os",
+        "host",
+        "kernel",
+        "uptime",
+        "packages",
+        "shell",
+        "terminal",
+        "cpu",
+        "memory",
+        "disk",
+        "colors"
+    ]
+}

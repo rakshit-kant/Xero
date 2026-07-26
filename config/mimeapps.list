@@ -1,0 +1,9 @@
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+text/plain=nvim.desktop
+application/pdf=org.gnome.Evince.desktop
+image/jpeg=org.gnome.eog.desktop
+image/png=org.gnome.eog.desktop
+inode/directory=org.gnome.Nautilus.desktop
+terminal=org.wezfurlong.wezterm.desktop

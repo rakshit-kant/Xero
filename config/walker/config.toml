@@ -1,0 +1,15 @@
+theme = "oxocarbon"
+
+width = 600
+height = 400
+
+show_categories = false
+hide_actions = true
+
+placeholder = "Search..."
+
+[keys]
+next = "Down"
+previous = "Up"
+accept = "Return"
+close = "Escape"
