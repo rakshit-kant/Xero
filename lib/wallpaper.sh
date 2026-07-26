@@ -11,16 +11,29 @@ install_wallpapers() {
     log_info "Installing wallpapers..."
 
     local source="$SCRIPT_DIR/wallpapers"
-    local target="$HOME/Pictures/Wallpapers"
+    local wallpaper_target="$HOME/Pictures/Wallpapers"
+    local sddm_theme="/usr/share/sddm/themes/xero"
 
     if [[ ! -d "$source" ]]; then
         log_warning "No wallpaper directory found. Skipping."
         return 0
     fi
 
-    mkdir -p "$target"
+    #
+    # Install user wallpapers
+    #
 
-    cp -r "$source/"* "$target/"
+    log_info "Installing user wallpapers..."
 
-    log_success "Wallpapers installed to ~/Pictures/Wallpapers"
+    mkdir -p "$wallpaper_target"
+
+    for folder in Desktop Lock; do
+        if [[ -d "$source/$folder" ]]; then
+            rm -rf "$wallpaper_target/$folder"
+            cp -r "$source/$folder" "$wallpaper_target/"
+            log_success "$folder wallpaper installed."
+        fi
+    done
+
+    log_success "All wallpapers installed successfully."
 }

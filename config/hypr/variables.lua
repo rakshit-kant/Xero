@@ -2,9 +2,10 @@
 
 local M = {}
 
-M.terminal    = "kitty"
+M.terminal = "wezterm"
 M.fileManager = "dolphin"
-M.menu        = "hyprlauncher"
-M.mainMod     = "SUPER"
+M.menu = "Walker"
+M.mainMod = "SUPER"
+M.browser = "firefox"
 
 return M

@@ -66,3 +66,23 @@ install_configs() {
         log_success "All configuration files installed successfully."
     fi
 }
+
+install_hypr_scripts() {
+    log_info "Installing Hyprland scripts..."
+
+    local source="$SCRIPT_DIR/config/hypr/scripts"
+    local target="$HOME/.config/hypr/scripts"
+
+    if [[ ! -d "$source" ]]; then
+        log_warning "Hypr scripts not found. Skipping."
+        return 0
+    fi
+
+    mkdir -p "$target"
+
+    cp -r "$source/"* "$target/"
+
+    chmod +x "$target"/*.sh
+
+    log_success "Hyprland scripts installed."
+}

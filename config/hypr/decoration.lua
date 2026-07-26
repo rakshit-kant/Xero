@@ -1,25 +1,49 @@
 -- decoration.lua
+-- Xero Hyprland Decoration Profile
 
 hl.config({
-    decoration = {
-        rounding       = 10,
-        rounding_power = 2,
+	decoration = {
+		-- Window corners
+		rounding = 14,
+		rounding_power = 3,
 
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+		-- Window transparency
+		active_opacity = 0.96,
+		inactive_opacity = 0.88,
 
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
+		-- Shadow system
+		shadow = {
+			enabled = true,
 
-        blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
-        },
-    },
+			range = 12,
+			render_power = 4,
+
+			color = 0xee000000,
+
+			offset = "0 4",
+			scale = 1.0,
+		},
+
+		-- Blur system
+		blur = {
+			enabled = true,
+
+			size = 8,
+			passes = 3,
+
+			ignore_opacity = true,
+			new_optimizations = true,
+
+			noise = 0.0117,
+			contrast = 1.0,
+			brightness = 1.0,
+
+			vibrancy = 0.18,
+			vibrancy_darkness = 0.0,
+		},
+
+		-- Dim inactive windows slightly
+		dim_inactive = true,
+		dim_strength = 0.08,
+	},
 })

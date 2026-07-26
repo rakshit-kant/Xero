@@ -18,6 +18,7 @@ OFFICIAL_PACKAGES=(
     hyprlock
     hypridle
     hyprpaper
+    hyprshot
     swaync
     sddm
 
