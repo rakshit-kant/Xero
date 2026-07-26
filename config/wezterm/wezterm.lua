@@ -2,36 +2,96 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13.0
+-----------------------------------------------------------
+-- Font
+-----------------------------------------------------------
+
+config.font = wezterm.font_with_fallback({
+	"JetBrainsMono Nerd Font",
+})
+
+config.font_size = 13.5
+
+config.line_height = 1.1
+
+-----------------------------------------------------------
+-- Appearance
+-----------------------------------------------------------
 
 config.color_scheme = "Oxocarbon Dark"
 
-config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+-- Liquid glass effect
+config.window_background_opacity = 0.82
+config.text_background_opacity = 0.82
 
-config.window_background_opacity = 0.92
-config.text_background_opacity = 0.92
-
-config.window_padding = {
-	left = 12,
-	right = 12,
-	top = 10,
-	bottom = 10,
+config.window_background_gradient = {
+	colors = {
+		"#161616",
+		"#1c1c1c",
+	},
 }
 
-config.cursor_blink_rate = 600
-config.cursor_style = "BlinkingBar"
+config.window_decorations = "RESIZE"
+
+-----------------------------------------------------------
+-- Window
+-----------------------------------------------------------
+
+config.window_padding = {
+	left = 14,
+	right = 14,
+	top = 12,
+	bottom = 12,
+}
+
+config.window_close_confirmation = "NeverPrompt"
+
+-----------------------------------------------------------
+-- Cursor
+-----------------------------------------------------------
 
 config.default_cursor_style = "BlinkingBar"
 
+config.cursor_blink_rate = 600
+
+-----------------------------------------------------------
+-- Tabs
+-----------------------------------------------------------
+
+config.enable_tab_bar = false
+
 config.hide_tab_bar_if_only_one_tab = true
 
+-----------------------------------------------------------
+-- Performance
+-----------------------------------------------------------
+
+config.front_end = "WebGpu"
+
+config.max_fps = 120
+
+-----------------------------------------------------------
+-- Keybinds
+-----------------------------------------------------------
+
 config.keys = {
+
 	{
 		key = "Enter",
 		mods = "ALT",
 		action = wezterm.action.ToggleFullScreen,
+	},
+
+	{
+		key = "c",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.CopyTo("Clipboard"),
+	},
+
+	{
+		key = "v",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.PasteFrom("Clipboard"),
 	},
 }
 

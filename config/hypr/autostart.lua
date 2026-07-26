@@ -4,7 +4,8 @@ local vars = require("variables")
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 exec-once = waybar
 exec-once = swaync
-exec-once = hyprpaper
+exec-once = awww-daemon
+exec-once = ~/.config/hypr/scripts/wallpaper.sh
 exec-once = hypridle
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec-once = wl-paste --watch cliphist store

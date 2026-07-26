@@ -17,7 +17,7 @@ OFFICIAL_PACKAGES=(
     wezterm
     hyprlock
     hypridle
-    hyprpaper
+    awww
     hyprshot
     swaync
     sddm
@@ -121,6 +121,7 @@ OFFICIAL_PACKAGES=(
     gvfs-mtp
 
     # Qt Theme & Appearance Configuration
+    adwaita-icon-theme
     qt5ct
     qt6ct
     kvantum
@@ -138,6 +139,8 @@ AUR_PACKAGES=(
     wlroots
     # Nerd Font
     ttf-jetbrains-mono-nerd
+    # Cursor
+    bibata-cursor-theme
     # Screenshot workflow enhancement
     grimblast-git
     # Additional audio utilities

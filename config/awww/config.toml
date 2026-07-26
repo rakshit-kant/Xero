@@ -1,0 +1,21 @@
+# ==========================================================
+# Xero awww Configuration
+# Dynamic Wallpaper Engine
+# ==========================================================
+
+[general]
+
+# Default transition
+transition = "grow"
+
+# Transition duration (seconds)
+transition_duration = 2.0
+
+# FPS for animations
+transition_fps = 60
+
+# Random transition direction
+transition_random = true
+
+# Cache wallpapers
+cache = true

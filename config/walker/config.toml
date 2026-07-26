@@ -1,15 +1,58 @@
-theme = "oxocarbon"
+# ==========================================================
+# Xero Walker Configuration
+# Minimal • Fast • Glass Launcher
+# ==========================================================
 
-width = 600
-height = 400
 
-show_categories = false
-hide_actions = true
+[app_launcher]
+theme = "xero"
 
-placeholder = "Search..."
 
 [keys]
 next = "Down"
 previous = "Up"
+
 accept = "Return"
 close = "Escape"
+
+# Quick navigation
+page_next = "Page_Down"
+page_previous = "Page_Up"
+
+
+[search]
+placeholder = "Search applications..."
+delay = 50
+
+# Start searching immediately
+auto_focus = true
+
+
+[providers]
+desktop = true
+runner = true
+
+# Disabled for a clean experience
+websearch = false
+clipboard = false
+
+
+[window]
+
+# Launcher size
+width = 650
+height = 520
+
+anchor = "center"
+
+# Floating behavior
+exclusive = false
+
+
+[ui]
+
+# Icon handling
+icon_size = 48
+
+# Result limit
+max_results = 8

@@ -1,36 +1,265 @@
-/* Oxocarbon Theme for SwayNC */
+/*
+    Xero SwayNC Theme
+    Glass • Minimal • Hyprland Style
+*/
+
+
 * {
     font-family: "JetBrainsMono Nerd Font";
     font-size: 14px;
+    font-weight: 600;
 }
+
+
+/* =========================
+   Notifications
+========================= */
 
 .notification-row {
     outline: none;
-    padding: 10px;
+    margin: 8px;
 }
+
 
 .notification {
-    background: #161616;
-    border: 1px solid #393939;
-    border-radius: 12px;
-    padding: 10px;
-    color: #f2f2f2;
+
+    background: rgba(15,15,20,0.88);
+
+    border-radius: 16px;
+
+    border:
+
+        1px solid rgba(51,204,255,0.18);
+
+
+    padding: 14px;
+
+
+    color: #f2f4f8;
+
+
+    box-shadow:
+
+        0 8px 30px rgba(0,0,0,0.35);
 }
+
+
+.notification:hover {
+
+    border-color:
+
+        rgba(51,204,255,0.45);
+}
+
+
+/* Notification title */
+
+.summary {
+
+    color: #33ccff;
+
+    font-weight: bold;
+}
+
+
+.body {
+
+    color:
+
+        rgba(255,255,255,0.75);
+}
+
+
+
+/* =========================
+   Control Center
+========================= */
 
 .control-center {
-    background: #161616;
-    border: 1px solid #393939;
-    border-radius: 12px;
-    color: #f2f2f2;
+
+    background:
+
+        rgba(15,15,20,0.82);
+
+
+    border-radius: 20px;
+
+
+    border:
+
+        1px solid rgba(51,204,255,0.25);
+
+
+    padding: 14px;
+
+
+    color: #ffffff;
+
+
+    box-shadow:
+
+        0 0 40px rgba(0,0,0,0.45);
 }
+
+
+
+/* =========================
+   Widgets
+========================= */
+
+
+.widget-title {
+
+    color: #33ccff;
+
+    font-size: 15px;
+
+    margin: 8px;
+}
+
+
+
+.widget-dnd {
+
+    background:
+
+        rgba(255,255,255,0.05);
+
+
+    border-radius: 14px;
+
+    padding: 10px;
+}
+
+
+
+/* =========================
+   Buttons
+========================= */
 
 .button {
-    background: #262626;
-    border: none;
-    border-radius: 8px;
-    color: #f2f2f2;
+
+    background:
+
+        rgba(255,255,255,0.06);
+
+
+    border-radius: 14px;
+
+
+    border:
+
+        1px solid rgba(255,255,255,0.08);
+
+
+    color:
+
+        #ffffff;
+
+
+    padding: 10px;
+
+
+    transition:
+
+        all 0.2s ease;
 }
 
+
 .button:hover {
-    background: #393939;
+
+    background:
+
+        rgba(51,204,255,0.18);
+
+
+    color:
+
+        #33ccff;
+
+
+    border-color:
+
+        rgba(51,204,255,0.4);
+}
+
+
+
+/* =========================
+   Sliders
+========================= */
+
+
+scale trough {
+
+    background:
+
+        rgba(255,255,255,0.12);
+
+
+    border-radius: 10px;
+
+    min-height: 8px;
+}
+
+
+scale highlight {
+
+    background:
+
+        #33ccff;
+
+
+    border-radius: 10px;
+}
+
+
+
+/* =========================
+   MPRIS Player
+========================= */
+
+.widget-mpris {
+
+    background:
+
+        rgba(255,255,255,0.05);
+
+
+    border-radius: 16px;
+
+    padding: 12px;
+}
+
+
+.widget-mpris-player {
+
+    border-radius: 14px;
+}
+
+
+.widget-mpris-title {
+
+    color: #33ccff;
+
+    font-weight: bold;
+}
+
+
+.widget-mpris-subtitle {
+
+    color:
+
+        rgba(255,255,255,0.65);
+}
+
+
+
+/* =========================
+   Scrollbar
+========================= */
+
+scrollbar {
+
+    opacity: 0;
 }

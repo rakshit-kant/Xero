@@ -35,11 +35,11 @@ hl.config({
 			new_optimizations = true,
 
 			noise = 0.0117,
-			contrast = 1.0,
-			brightness = 1.0,
+			contrast = 1.05,
+			brightness = 0.95,
 
-			vibrancy = 0.18,
-			vibrancy_darkness = 0.0,
+			vibrancy = 0.25,
+			vibrancy_darkness = 0.1,
 		},
 
 		-- Dim inactive windows slightly
