@@ -14,7 +14,6 @@ OFFICIAL_PACKAGES=(
     # Window Manager & Core Desktop Components
     hyprland
     waybar
-    walker
     wezterm
     hyprlock
     hypridle
@@ -25,7 +24,6 @@ OFFICIAL_PACKAGES=(
     # Wayland Essentials
     wayland
     wayland-protocols
-    wlroots
     qt5-wayland
     qt6-wayland
     seatd
@@ -132,6 +130,11 @@ OFFICIAL_PACKAGES=(
 )
 
 AUR_PACKAGES=(
+    # Application Launcher
+    walker
+    # Custom Wayland Display Server
+    wlroots
+    # Nerd Font
     ttf-jetbrains-mono-nerd
     # Screenshot workflow enhancement
     grimblast-git
