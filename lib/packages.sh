@@ -105,6 +105,7 @@ OFFICIAL_PACKAGES=(
     base-devel
     gcc
     clang
+    lldb
     cmake
     ninja
     valgrind

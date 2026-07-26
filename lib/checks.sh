@@ -10,13 +10,13 @@ CHECKS_LOADED=1
 # checks.sh - Environment and pre-requisite checks.
 # Ensures the installer runs under the correct conditions (Arch Linux, non-root, internet active).
 
-SUDO_KEEPALIVE_PID=""
-
 start_sudo_keepalive() {
-    while true; do
-        sudo -v
-        sleep 60
-    done &
+    (
+        while true; do
+            sleep 60
+            sudo -v
+        done
+    ) &
 
     SUDO_KEEPALIVE_PID=$!
 }
@@ -46,27 +46,27 @@ check_arch() {
 check_root() {
     log_info "Checking user privileges..."
 
-    # Building packages (especially with makepkg/paru) as root is dangerous and forbidden.
+    # AUR helpers like paru/makepkg must never run as root.
     if [[ "$EUID" -eq 0 ]]; then
-        log_error "This script should NOT be run as root directly."
-        log_info "AUR packages cannot be built as root. Please run as a normal user with sudo privileges."
+        log_error "This installer must not be run as root."
+        log_info "Run it as a normal user with sudo privileges."
         exit 1
     fi
 
-    # Verify sudo is available on the system
+    # sudo is required for system-wide changes.
     if ! command_exists sudo; then
-        log_error "The 'sudo' command is not installed. Please install sudo and configure user privileges."
+        log_error "The 'sudo' command is not installed."
         exit 1
     fi
 
-    # Refresh sudo credentials early, prompting for password if necessary.
-    log_info "Requesting sudo authentication (needed for system package installations)..."
+    # Authenticate sudo once.
+    log_info "Requesting sudo authentication..."
     if ! sudo -v; then
-        log_error "Sudo authorization failed."
+        log_error "Sudo authentication failed."
         exit 1
     fi
 
-    # Keep sudo alive in the background while the installer runs
+    # Refresh sudo timestamp until installer exits.
     start_sudo_keepalive
 
     log_success "Sudo access verified and cached."
