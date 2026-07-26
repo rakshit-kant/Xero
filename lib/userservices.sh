@@ -24,10 +24,10 @@ enable_user_services() {
 
     for service in "${user_services[@]}"; do
         log_info "Enabling and starting user service: $service"
-        
+
         # User services MUST be enabled/started without sudo.
         # They will run under the logged-in user's context.
-        if ! systemctl --user enable --now "$service"; then
+        if ! systemctl --user enable "$service"; then
             log_error "Failed to enable and start user service: $service"
             exit 1
         fi

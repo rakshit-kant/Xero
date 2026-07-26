@@ -36,7 +36,7 @@ install_aur_packages() {
     # Install packages using paru.
     # --needed: Do not reinstall up-to-date targets.
     # --noconfirm: Answer yes to all prompt questions.
-    if ! paru -S --needed --noconfirm "${AUR_PACKAGES[@]}"; then
+    if ! paru -S --needed "${AUR_PACKAGES[@]}"; then
         log_error "Failed to install some AUR packages."
         exit 1
     fi
