@@ -1,17 +1,11 @@
--- autostart.lua
-local vars = require("variables")
+local home = os.getenv("HOME")
 
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
-exec-once = waybar
-exec-once = swaync
-exec-once = awww-daemon
-exec-once = ~/.config/hypr/scripts/wallpaper.sh
-exec-once = hypridle
-exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec-once = wl-paste --watch cliphist store
--- Uncomment and modify to use:
--- hl.on("hyprland.start", function () 
---   hl.exec_cmd(vars.terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function()
+	hl.dsp.exec_cmd("waybar")()
+	hl.dsp.exec_cmd("swaync")()
+	hl.dsp.exec_cmd("awww-daemon")()
+	hl.dsp.exec_cmd(home .. "/.config/hypr/scripts/wallpaper.sh")()
+	hl.dsp.exec_cmd("hypridle")()
+	hl.dsp.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")()
+	hl.dsp.exec_cmd("wl-paste --watch cliphist store")()
+end)
