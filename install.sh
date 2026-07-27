@@ -35,6 +35,7 @@ load_libraries() {
         "$SCRIPT_DIR/lib/nvim.sh"
         "$SCRIPT_DIR/lib/zsh.sh"
         "$SCRIPT_DIR/lib/configs.sh"
+        "$SCRIPT_DIR/lib/wallpaper.sh"
         "$SCRIPT_DIR/lib/services.sh"
         "$SCRIPT_DIR/lib/userservices.sh"
     )
