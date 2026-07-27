@@ -68,6 +68,7 @@ main() {
     run_step "Installing AUR packages" install_aur_packages
     run_step "Installing Rustup" install_rustup
     run_step "Installing configuration files" install_configs
+    run_step "Installing Hyprland configuration" install_hypr_config
     run_step "Installing Hyprland scripts" install_hypr_scripts
     run_step "Installing Neovim configuration" install_nvim_config
     run_step "Setting up Zsh environment" setup_zsh
