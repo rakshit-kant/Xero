@@ -88,7 +88,7 @@ install_official_packages() {
 }
 
 install_aur_packages() {
-    paru -S walker \
+    yay -S walker \
         wlroots \
         ttf-jetbrains-mono-nerd \
         bibata-cursor-theme \
