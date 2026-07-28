@@ -5,7 +5,8 @@ set -euo pipefail
 install_official_packages() {
     sudo pacman --needed -Syu hyprland \
         waybar \
-        wezterm \
+        kitty \
+        konsole \
         hyprlock \
         hypridle \
         awww \
@@ -64,6 +65,7 @@ install_official_packages() {
         imv \
         zathura \
         zathura-pdf-mupdf \
+        npm \
         base-devel \
         gcc \
         clang \
@@ -91,7 +93,6 @@ install_aur_packages() {
     yay -S walker \
         wlroots \
         ttf-jetbrains-mono-nerd \
-        bibata-cursor-theme \
         grimblast-git \
         wiremix
 }

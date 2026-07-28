@@ -54,7 +54,6 @@ main() {
     run_step "Checking root privileges" check_root
     run_step "Checking internet connectivity" check_internet
     run_step "Checking required dependencies" check_dependencies
-    run_step "Synchronizing pacman databases" synchronize_pacman
     run_step "Installing official packages" install_official_packages
     run_step "Installing AUR packages" install_aur_packages
     run_step "Installing Rustup" install_rustup
