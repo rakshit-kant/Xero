@@ -3,7 +3,7 @@
 set -euo pipefail
 
 install_official_packages() {
-    sudo pacman -needed -Syu hyprland \
+    sudo pacman --needed -Syu hyprland \
         waybar \
         wezterm \
         hyprlock \
